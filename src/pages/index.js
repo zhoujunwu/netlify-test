@@ -1,5 +1,14 @@
 import React from "react"
+import { graphql } from "gatsby"
 
-export default () => (
-  <div style={{ color: `purple`, fontSize: `72px` }}>Hello Gatsby。。!</div>
-)
+const IndexPage = ({ data }) => <div>{data.datoCmsTestarticle.testtitle}</div>
+
+export default IndexPage
+
+export const query = graphql`
+  {
+    datoCmsTestarticle {
+      testtitle
+    }
+  }
+`
